@@ -52,7 +52,7 @@ class { '::virtual': }
 Simply call the module with parameter experimental enabled:
 
 ```puppet
-class { '::icinga': experimental => true }
+class { '::virtual': experimental => true }
 ```
 
 ## Reference
