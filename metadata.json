@@ -1,0 +1,17 @@
+{
+  "name": "thbe-virtual",
+  "version": "1.1.1",
+  "author": "thbe",
+  "summary": "Install virtual extensions based on hypervisor",
+  "license": "GPL-3.0",
+  "source": "https://github.com/thbe/puppet-virtual.git",
+  "project_page": "https://github.com/thbe/puppet-virtual",
+  "issues_url": "https://github.com/thbe/puppet-virtual/issues",
+  "operatingsystem_support": [
+    { "operatingsystem": "RedHat", "operatingsystemrelease": [ "6.0", "7.0" ] },
+    { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6.0", "7.0" ] },
+    { "operatingsystem": "Scientific", "operatingsystemrelease": [ "6.0", "7.0" ] }
+  ],
+  "dependencies": [
+  ]
+}
