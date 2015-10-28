@@ -7,7 +7,7 @@
 #
 # Here is the list of parameters used by this module.
 #
-# [*experimental*]
+# [*use_experimental*]
 #   Activate experimental features (currently unused)
 #   Default value is false
 #
@@ -18,7 +18,7 @@
 # === Examples
 #
 #  class { '::virtual':
-#    experimental => false,
+#    use_experimental => false,
 #  }
 #
 # === Authors
@@ -30,7 +30,9 @@
 # Copyright 2015 Thomas Bendler, unless otherwise noted.
 #
 class virtual (
-  $experimental = false,
+  $use_experimental    = false,
+  $tuning_service      = $virtual::params::tuning_service,
+  $tuning_logging      = $virtual::params::tuning_logging,
   ) inherits virtual::params {
 
   # Start workflow

@@ -1,5 +1,9 @@
 # virtual
 
+[![Build Status](https://travis-ci.org/thbe/puppet-virtual.png?branch=master)](https://travis-ci.org/thbe/puppet-virtual)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/thbe/virtual.svg)](https://forge.puppetlabs.com/thbe/virtual)
+[![Coverage Status](https://coveralls.io/repos/thbe/puppet-virtual/badge.svg?branch=master&service=github)](https://coveralls.io/github/thbe/puppet-virtual?branch=master)
+
 #### Table of Contents
 
 1. [Overview](#overview)

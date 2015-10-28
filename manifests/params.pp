@@ -14,24 +14,32 @@ class virtual::params {
   # Operating system specific definitions
   case $::osfamily {
     'RedHat' : {
-      $linux = true
-      $redhat = true
+      $linux                       = true
+      $redhat                      = true
+    }
+    default: {
+      $linux                       = false
     }
   }
 
   # General definitions
-  $serviceAcpid = 'acpid'
-  $serviceAutofs = 'autofs'
-  $serviceAvahiDaemon = 'avahi-daemon'
-  $serviceBluetooth = 'bluetooth'
-  $serviceCpuspeed = 'cpuspeed'
-  $serviceGpm = 'gpm'
-  $serviceHidd = 'hidd'
-  $serviceIrqbalance = 'irqbalance'
-  $serviceIscsi = 'iscsi'
-  $serviceIscsid = 'iscsid'
-  $serviceIsdn = 'isdn'
-  $serviceSmartd = 'smartd'
+  $use_experimental                = false
+  $tuning_service                  = false
+  $tuning_logging                  = false
+
+  # Service definitions
+  $serviceAcpid                    = 'acpid'
+  $serviceAutofs                   = 'autofs'
+  $serviceAvahiDaemon              = 'avahi-daemon'
+  $serviceBluetooth                = 'bluetooth'
+  $serviceCpuspeed                 = 'cpuspeed'
+  $serviceGpm                      = 'gpm'
+  $serviceHidd                     = 'hidd'
+  $serviceIrqbalance               = 'irqbalance'
+  $serviceIscsi                    = 'iscsi'
+  $serviceIscsid                   = 'iscsid'
+  $serviceIsdn                     = 'isdn'
+  $serviceSmartd                   = 'smartd'
 
   # KVM definitions
 
