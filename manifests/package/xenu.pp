@@ -11,7 +11,7 @@
 # Sample Usage:
 #
 class virtual::package::xenu {
-  package { $virtual::params::packageXeGuestUtilities: ensure => installed; }
+  package { $virtual::params::package_xe_guest_utilities: ensure => installed; }
 
-  package { $virtual::params::packageXeGuestUtilitiesXenstore: ensure => installed; }
+  package { $virtual::params::package_xe_guest_utilities_xenstore: ensure => installed; }
 }

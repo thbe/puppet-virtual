@@ -47,4 +47,7 @@ class virtual (
     Class['virtual::config'] ->
     Class['virtual::service']
   }
+  else {
+    warning('The current operating system is not supported!')
+  }
 }

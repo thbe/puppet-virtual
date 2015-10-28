@@ -11,5 +11,5 @@
 # Sample Usage:
 #
 class virtual::package::kvm {
-  # package { $virtual::params::packageKvmUtilities: ensure => installed; }
+  # package { $virtual::params::package_kvm_utilities: ensure => installed; }
 }

@@ -5,4 +5,6 @@
 # Parameters: This class has no parameters
 #
 class virtual::config::general {
+  # some config settings
+
 }

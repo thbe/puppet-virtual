@@ -14,46 +14,46 @@ class virtual::params {
   # Operating system specific definitions
   case $::osfamily {
     'RedHat' : {
-      $linux                       = true
-      $redhat                      = true
+      $linux                           = true
+      $redhat                          = true
     }
     default: {
-      $linux                       = false
+      $linux                           = false
     }
   }
 
   # General definitions
-  $use_experimental                = false
-  $tuning_service                  = false
-  $tuning_logging                  = false
+  $use_experimental                    = false
+  $tuning_service                      = false
+  $tuning_logging                      = false
 
   # Service definitions
-  $serviceAcpid                    = 'acpid'
-  $serviceAutofs                   = 'autofs'
-  $serviceAvahiDaemon              = 'avahi-daemon'
-  $serviceBluetooth                = 'bluetooth'
-  $serviceCpuspeed                 = 'cpuspeed'
-  $serviceGpm                      = 'gpm'
-  $serviceHidd                     = 'hidd'
-  $serviceIrqbalance               = 'irqbalance'
-  $serviceIscsi                    = 'iscsi'
-  $serviceIscsid                   = 'iscsid'
-  $serviceIsdn                     = 'isdn'
-  $serviceSmartd                   = 'smartd'
+  $service_acpid                       = 'acpid'
+  $service_autofs                      = 'autofs'
+  $service_avahi_daemon                = 'avahi-daemon'
+  $service_bluetooth                   = 'bluetooth'
+  $service_cpuspeed                    = 'cpuspeed'
+  $service_gpm                         = 'gpm'
+  $service_hidd                        = 'hidd'
+  $service_irqbalance                  = 'irqbalance'
+  $service_iscsi                       = 'iscsi'
+  $service_iscsid                      = 'iscsid'
+  $service_isdn                        = 'isdn'
+  $service_smartd                      = 'smartd'
 
   # KVM definitions
 
   # XEN definitions
-  $packageXeGuestUtilities         = 'xe-guest-utilities'
-  $packageXeGuestUtilitiesXenstore = 'xe-guest-utilities-xenstore'
+  $package_xe_guest_utilities          = 'xe-guest-utilities'
+  $package_xe_guest_utilities_xenstore = 'xe-guest-utilities-xenstore'
 
   # VirtualBox definitions
-  $packageVirtualboxTools          = 'VirtualBox-5.0'
+  $package_virtualbox_tools            = 'VirtualBox-5.0'
 
   # VMware definitions
-  $packageVmwareGuestUtilities     = 'vmware-tools-esx-nox'
+  $package_vmware_guest_utilities      = 'vmware-tools-esx-nox'
 
   # Hyper-V definitions
-  $packageHypervKernelModule       = 'kmod-microsoft-hyper-v'
-  $packageHypervTools              = 'microsoft-hyper-v'
+  $package_hyperv_kernel_module        = 'kmod-microsoft-hyper-v'
+  $package_hyperv_tools                = 'microsoft-hyper-v'
 }

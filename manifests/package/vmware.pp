@@ -11,5 +11,5 @@
 # Sample Usage:
 #
 class virtual::package::vmware {
-  package { $virtual::params::packageVmwareGuestUtilities: ensure => installed; }
+  package { $virtual::params::package_vmware_guest_utilities: ensure => installed; }
 }

@@ -11,5 +11,5 @@
 # Sample Usage:
 #
 class virtual::package::virtualbox {
-  package { $virtual::params::packageVirtualboxTools: ensure => installed; }
+  package { $virtual::params::package_virtualbox_tools: ensure => installed; }
 }

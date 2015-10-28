@@ -11,5 +11,5 @@
 # Sample Usage:
 #
 class virtual::package::hyperv {
-  # package { $virtual::params::packageHypervUtilities: ensure => installed; }
+  # package { $virtual::params::package_hyperv_utilities: ensure => installed; }
 }
