@@ -33,7 +33,6 @@ class virtual::params {
   $service_avahi_daemon                = 'avahi-daemon'
   $service_bluetooth                   = 'bluetooth'
   $service_cpuspeed                    = 'cpuspeed'
-  $service_gpm                         = 'gpm'
   $service_hidd                        = 'hidd'
   $service_irqbalance                  = 'irqbalance'
   $service_iscsi                       = 'iscsi'
@@ -56,4 +55,7 @@ class virtual::params {
   # Hyper-V definitions
   $package_hyperv_kernel_module        = 'kmod-microsoft-hyper-v'
   $package_hyperv_tools                = 'microsoft-hyper-v'
+  $service_hyperv_hv_fcopy_daemon      = 'hv_fcopy_daemon'
+  $service_hyperv_hv_kvp_daemon        = 'hv_kvp_daemon'
+  $service_hyperv_hv_vss_daemon        = 'hv_vss_daemon'
 }

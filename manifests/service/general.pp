@@ -15,8 +15,6 @@ class virtual::service::general {
 
   service { $virtual::params::service_cpuspeed:     ensure => 'stopped', enable => false; }
 
-  service { $virtual::params::service_gpm:          ensure => 'stopped', enable => false; }
-
   service { $virtual::params::service_hidd:         ensure => 'stopped', enable => false; }
 
   service { $virtual::params::service_irqbalance:   ensure => 'stopped', enable => false; }

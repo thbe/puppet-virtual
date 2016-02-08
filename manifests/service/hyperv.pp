@@ -11,5 +11,9 @@
 # Sample Usage:
 #
 class virtual::service::hyperv {
-  # Some services settings
+  service { $virtual::params::service_hyperv_hv_fcopy_daemon: ensure => 'started', enable => true; }
+
+  service { $virtual::params::service_hyperv_hv_kvp_daemon:   ensure => 'started', enable => true; }
+
+  service { $virtual::params::service_hyperv_hv_vss_daemon:   ensure => 'started', enable => true; }
 }
