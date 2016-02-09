@@ -31,6 +31,7 @@
 #
 class virtual (
   $use_experimental    = false,
+  $install_packages    = true,
   $tuning_service      = $virtual::params::tuning_service,
   $tuning_logging      = $virtual::params::tuning_logging,
   ) inherits virtual::params {
