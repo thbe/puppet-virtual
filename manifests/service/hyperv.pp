@@ -11,9 +11,29 @@
 # Sample Usage:
 #
 class virtual::service::hyperv {
-  service { $virtual::params::service_hyperv_hv_fcopy_daemon: ensure => 'started', enable => true; }
+  # Get exact operating system version to determin if packages are build in or separate
+  $local_os_major = regsubst($::operatingsystemrelease, '\.[0-9]$', '\1')
+  $local_os_minor = regsubst($::operatingsystemrelease, '^[0-9]\.', '\1')
 
-  service { $virtual::params::service_hyperv_hv_kvp_daemon:   ensure => 'started', enable => true; }
+  # Check if hyperv tools are built in
+  if $local_os_major == '6' {
+    if $local_os_minor >= '7' {
+      $local_hyperv_tools = 'built-in'
+    }
+  }
+  if $local_os_major == '7' {
+    if $local_os_minor >= '1' {
+      $local_hyperv_tools = 'built-in'
+    }
+  }
 
-  service { $virtual::params::service_hyperv_hv_vss_daemon:   ensure => 'started', enable => true; }
+  if $local_hyperv_tools == 'built-in' {
+    service { $virtual::params::service_hypervfcopyd:           ensure => 'started', enable => true; }
+    service { $virtual::params::service_hypervkvpd:             ensure => 'started', enable => true; }
+    service { $virtual::params::service_hypervvssd:             ensure => 'started', enable => true; }
+  } else {
+    service { $virtual::params::service_hyperv_hv_fcopy_daemon: ensure => 'started', enable => true; }
+    service { $virtual::params::service_hyperv_hv_kvp_daemon:   ensure => 'started', enable => true; }
+    service { $virtual::params::service_hyperv_hv_vss_daemon:   ensure => 'started', enable => true; }
+  }
 }

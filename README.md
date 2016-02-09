@@ -20,7 +20,8 @@
 
 ## Overview
 
-This module install and configure virtual machine support for several virtualization.
+This module install and configure virtual machine support for several virtualization. Depending on the
+virtualization type it could be necessary to provide additional RPMs.
 
 
 ## Module Description
@@ -71,8 +72,9 @@ repository (search for createrepo to see how this could be done).
 The module has been tested on:
 
 * RedHat Enterprise Linux 6/7
-* Scientific Linux 6
+* Oracle Enterprise Linux 6/7
 * CentOS Linux 6/7
+* Scientific Linux 6/7
 
 Testing on other platforms has been light and cannot be guaranteed.
 

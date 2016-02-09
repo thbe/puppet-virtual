@@ -52,10 +52,23 @@ class virtual::params {
   # VMware definitions
   $package_vmware_guest_utilities      = 'vmware-tools-esx-nox'
 
-  # Hyper-V definitions
+  # Hyper-V definitions, no native support
   $package_hyperv_kernel_module        = 'kmod-microsoft-hyper-v'
   $package_hyperv_tools                = 'microsoft-hyper-v'
+
   $service_hyperv_hv_fcopy_daemon      = 'hv_fcopy_daemon'
   $service_hyperv_hv_kvp_daemon        = 'hv_kvp_daemon'
   $service_hyperv_hv_vss_daemon        = 'hv_vss_daemon'
+
+  # Hyper-V definitions, native support
+  $package_hyperv_daemons              = 'hyperv-daemons'
+  $package_hyperv_daemons_license      = 'hyperv-daemons-license'
+  $package_hypervfcopyd                = 'hypervfcopyd'
+  $package_hypervkvpd                  = 'hypervkvpd'
+  $package_hypervvssd                  = 'hypervvssd'
+
+  $service_hypervfcopyd                = 'hv_fcopy_daemon'
+  $service_hypervkvpd                  = 'hv_kvp_daemon'
+  $service_hypervvssd                  = 'hv_vss_daemon'
+
 }
