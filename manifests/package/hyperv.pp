@@ -12,19 +12,22 @@
 #
 class virtual::package::hyperv {
   # Get exact operating system version to determin if packages are build in or separate
-  $local_os_major = regsubst($::operatingsystemrelease, '\.[0-9]$', '\1')
-  $local_os_minor = regsubst($::operatingsystemrelease, '^[0-9]\.', '\1')
+  $local_os_major = regsubst($::operatingsystemrelease, '^([0-9]).*', '\1')
+  $local_os_minor = regsubst($::operatingsystemrelease, '^[0-9]\.([0-9]).*', '\1')
 
   # Check if hyperv tools are built in
+  if $local_os_major == '5' {
+    if $local_os_minor >= '9' {
+      $local_hyperv_tools = 'built-in'
+    }
+  }
   if $local_os_major == '6' {
-    if $local_os_minor >= '7' {
+    if $local_os_minor >= '4' {
       $local_hyperv_tools = 'built-in'
     }
   }
   if $local_os_major == '7' {
-    if $local_os_minor >= '1' {
-      $local_hyperv_tools = 'built-in'
-    }
+    $local_hyperv_tools = 'built-in'
   }
 
   if $local_hyperv_tools == 'built-in' {

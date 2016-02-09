@@ -46,8 +46,13 @@ class virtual::params {
   $package_xe_guest_utilities          = 'xe-guest-utilities'
   $package_xe_guest_utilities_xenstore = 'xe-guest-utilities-xenstore'
 
+  $service_xe_linux_distribution       = 'xe-linux-distribution'
+
   # VirtualBox definitions
   $package_virtualbox_tools            = 'VirtualBox-5.0'
+
+  $service_vboxadd                     = 'vboxadd'
+  $service_vboxadd_service             = 'vboxadd-service'
 
   # VMware definitions
   $package_vmware_guest_utilities      = 'vmware-tools-esx-nox'
@@ -67,8 +72,8 @@ class virtual::params {
   $package_hypervkvpd                  = 'hypervkvpd'
   $package_hypervvssd                  = 'hypervvssd'
 
-  $service_hypervfcopyd                = 'hv_fcopy_daemon'
-  $service_hypervkvpd                  = 'hv_kvp_daemon'
-  $service_hypervvssd                  = 'hv_vss_daemon'
+  $service_hypervfcopyd                = 'hypervfcopyd'
+  $service_hypervkvpd                  = 'hypervkvpd'
+  $service_hypervvssd                  = 'hypervvssd'
 
 }

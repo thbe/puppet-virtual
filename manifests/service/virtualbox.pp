@@ -11,5 +11,6 @@
 # Sample Usage:
 #
 class virtual::service::virtualbox {
-  # Some services settings
+  service { $virtual::params::service_vboxadd:         ensure => 'running', enable => true; }
+  service { $virtual::params::service_vboxadd_service: ensure => 'running', enable => true; }
 }

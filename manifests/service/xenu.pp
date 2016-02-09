@@ -11,5 +11,5 @@
 # Sample Usage:
 #
 class virtual::service::xenu {
-  # Some services settings
+  service { $virtual::params::service_xe_linux_distribution: ensure => 'running', enable => true; }
 }
