@@ -1,3 +1,6 @@
+0.2.1 2016-02-09 thbe <project@bendler-net.de>
+ * Fix package removal ordering
+
 0.2.0 2016-02-09 thbe <project@bendler-net.de>
  * Add support for 5.x
  * Add Citrix XenServer support

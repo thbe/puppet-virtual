@@ -32,7 +32,10 @@ class virtual::package::hyperv {
 
   if $local_hyperv_tools == 'built-in' {
     package { $virtual::params::package_hyperv_kernel_module:   ensure => absent; }
-    package { $virtual::params::package_hyperv_tools:           ensure => absent; }
+    package { $virtual::params::package_hyperv_tools:
+      ensure => absent,
+      before => Package[$virtual::params::package_hyperv_kernel_module];
+    }
 
     package { $virtual::params::package_hyperv_daemons:         ensure => installed; }
     package { $virtual::params::package_hyperv_daemons_license: ensure => installed; }
