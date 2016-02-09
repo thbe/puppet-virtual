@@ -28,12 +28,12 @@ class virtual::service::hyperv {
   }
 
   if $local_hyperv_tools == 'built-in' {
-    service { $virtual::params::service_hypervfcopyd:           ensure => 'started', enable => true; }
-    service { $virtual::params::service_hypervkvpd:             ensure => 'started', enable => true; }
-    service { $virtual::params::service_hypervvssd:             ensure => 'started', enable => true; }
+    service { $virtual::params::service_hypervfcopyd:           ensure => 'running', enable => true; }
+    service { $virtual::params::service_hypervkvpd:             ensure => 'running', enable => true; }
+    service { $virtual::params::service_hypervvssd:             ensure => 'running', enable => true; }
   } else {
-    service { $virtual::params::service_hyperv_hv_fcopy_daemon: ensure => 'started', enable => true; }
-    service { $virtual::params::service_hyperv_hv_kvp_daemon:   ensure => 'started', enable => true; }
-    service { $virtual::params::service_hyperv_hv_vss_daemon:   ensure => 'started', enable => true; }
+    service { $virtual::params::service_hyperv_hv_fcopy_daemon: ensure => 'running', enable => true; }
+    service { $virtual::params::service_hyperv_hv_kvp_daemon:   ensure => 'running', enable => true; }
+    service { $virtual::params::service_hyperv_hv_vss_daemon:   ensure => 'running', enable => true; }
   }
 }
