@@ -55,7 +55,7 @@ class virtual::params {
   $service_vboxadd_service             = 'vboxadd-service'
 
   # VMware definitions
-  $package_vmware_guest_utilities      = 'vmware-tools-esx-nox'
+  $package_vmware_guest_utilities      = 'open-vm-tools'
 
   # Hyper-V definitions, no native support
   $package_hyperv_kernel_module        = 'kmod-microsoft-hyper-v'
