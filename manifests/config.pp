@@ -12,26 +12,26 @@
 #
 class virtual::config {
   if $::is_virtual {
-    include virtual::config::general
+    include ::virtual::config::general
   }
 
   if $::virtual == 'kvm' {
-    include virtual::config::kvm
+    include ::virtual::config::kvm
   }
 
   if $::virtual == 'xenu' {
-    include virtual::config::xenu
+    include ::virtual::config::xenu
   }
 
   if $::virtual == 'virtualbox' {
-    include virtual::config::virtualbox
+    include ::virtual::config::virtualbox
   }
 
   if $::virtual == 'vmware' {
-    include virtual::config::vmware
+    include ::virtual::config::vmware
   }
 
   if $::virtual == 'hyperv' {
-    include virtual::config::hyperv
+    include ::virtual::config::hyperv
   }
 }

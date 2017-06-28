@@ -12,26 +12,26 @@
 #
 class virtual::service {
   if $::is_virtual {
-    include virtual::service::general
+    include ::virtual::service::general
   }
 
   if $::virtual == 'kvm' {
-    include virtual::service::kvm
+    include ::virtual::service::kvm
   }
 
   if $::virtual == 'xenu' {
-    include virtual::service::xenu
+    include ::virtual::service::xenu
   }
 
   if $::virtual == 'virtualbox' {
-    include virtual::service::virtualbox
+    include ::virtual::service::virtualbox
   }
 
   if $::virtual == 'vmware' {
-    include virtual::service::vmware
+    include ::virtual::service::vmware
   }
 
   if $::virtual == 'hyperv' {
-    include virtual::service::hyperv
+    include ::virtual::service::hyperv
   }
 }

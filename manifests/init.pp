@@ -38,15 +38,10 @@ class virtual (
 
   # Start workflow
   if $virtual::params::linux {
-    # Containment
-    contain virtual::package
-    contain virtual::config
-    contain virtual::service
-
-    # Include classes
-    Class['virtual::package'] ->
-    Class['virtual::config'] ->
-    Class['virtual::service']
+    class{ '::virtual::package': }
+    -> class{ '::virtual::config': }
+    ~> class{ '::virtual::service': }
+    -> Class['virtual']
   }
   else {
     warning('The current operating system is not supported!')

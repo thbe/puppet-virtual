@@ -13,27 +13,27 @@
 class virtual::package {
   if $virtual::install_packages {
     if $::is_virtual {
-      include virtual::package::general
+      include ::virtual::package::general
     }
 
     if $::virtual == 'kvm' {
-      include virtual::package::kvm
+      include ::virtual::package::kvm
     }
 
     if $::virtual == 'xenu' {
-      include virtual::package::xenu
+      include ::virtual::package::xenu
     }
 
     if $::virtual == 'virtualbox' {
-      include virtual::package::virtualbox
+      include ::virtual::package::virtualbox
     }
 
     if $::virtual == 'vmware' {
-      include virtual::package::vmware
+      include ::virtual::package::vmware
     }
 
     if $::virtual == 'hyperv' {
-      include virtual::package::hyperv
+      include ::virtual::package::hyperv
     }
   }
 }
