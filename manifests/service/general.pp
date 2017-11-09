@@ -7,8 +7,6 @@
 class virtual::service::general {
   service { $virtual::params::service_acpid:        ensure => 'stopped', enable => false; }
 
-  service { $virtual::params::service_autofs:       ensure => 'stopped', enable => false; }
-
   service { $virtual::params::service_avahi_daemon: ensure => 'stopped', enable => false; }
 
   service { $virtual::params::service_bluetooth:    ensure => 'stopped', enable => false; }

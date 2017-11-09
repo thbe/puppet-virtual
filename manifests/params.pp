@@ -29,7 +29,6 @@ class virtual::params {
 
   # Service definitions
   $service_acpid                       = 'acpid'
-  $service_autofs                      = 'autofs'
   $service_avahi_daemon                = 'avahi-daemon'
   $service_bluetooth                   = 'bluetooth'
   $service_cpuspeed                    = 'cpuspeed'

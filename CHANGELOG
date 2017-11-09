@@ -1,3 +1,7 @@
+0.3.0 2017-11-09 thbe <project@bendler-net.de>
+ * Removed autofs
+ * Switch to new CI pipeline
+
 0.2.2 2016-10-07 thbe <project@bendler-net.de>
  * Switched vmware to open-vm-tools
 

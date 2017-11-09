@@ -1,6 +1,6 @@
 {
   "name": "thbe-virtual",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "author": "thbe",
   "summary": "Install virtual extensions based on hypervisor",
   "license": "GPL-3.0",

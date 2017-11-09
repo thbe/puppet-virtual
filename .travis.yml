@@ -1,36 +1,49 @@
----
-sudo: false
-dist: c7
+sudo: required
+dist: trusty
+services: docker
 language: ruby
 cache: bundler
+bundler_args: "--without system_tests"
 before_install:
-  - bundle -v
-  - rm Gemfile.lock || true
-  - gem update --system
-  - gem update bundler
-  - gem --version
-  - bundle -v
+- rm Gemfile.lock || true
+- gem update --system
+- gem update bundler
+- gem --version
+- bundle --version
+stages:
+- test
+- deploy
 script:
-  - 'bundle exec rake $CHECK'
+- bundle exec rake $CHECK
 matrix:
   fast_finish: true
   include:
   - rvm: 2.1.9
-    bundler_args: --without system_tests development
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES=yes CHECK=test
-  - rvm: 2.2.7
-    bundler_args: --without system_tests development
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES=yes CHECK=test
-  - rvm: 2.3.4
-    bundler_args: --without system_tests development
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES=yes CHECK=test
-  - rvm: 2.4.1
-    bundler_args: --without system_tests development
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES=yes CHECK=test
+    env: PUPPET_VERSION="~> 4.0" CHECK=test
+    stage: test
+  - rvm: 2.3.1
+    env: PUPPET_VERSION="~> 4.0" CHECK=test
+    stage: test
+  - rvm: default
+    env: PUPPET_VERSION="~> 5.0" CHECK=test
+    stage: test
+  - rvm: default
+    bundler_args: ''
+    env: BEAKER_set=centos-7-x64 BEAKER_debug=1 PUPPET_INSTALL_TYPE=agent CHECK=beaker DEPLOY_TO_FORGE=yes
+    stage: deploy
 branches:
   only:
   - master
-  - /^v\d/
+  - "/^v\\d/"
 notifications:
   email:
-    - project@bendler-net.de
+  - project@bendler-net.de
+deploy:
+  provider: puppetforge
+  user: thbe
+  password:
+    secure: JThLKRorUEKuvrh67OhNrrvlrAYi0yUiXatEutGXJHlA/OecguMdu27zEsWs8Tlo5c4CobLzXsy0orVWY/X3GVtNz0A6dLOnP8b1zt+T/yvisPjB9DzyDGfcxWXy+zKYJuAzvJfinpZreR/0js3F/ogHcU6whjc+cJAk7Xc873LfiAGITkGSZLSkeYj7CzMNme3ZFEDZ+w0QMKfOvgPY1QS456mmUPLB1KkHXMVCO/wviOqFjplS/M7QigpZIn+WlE5kl7d7mKm1Gh/9STHsFJmDF1PBjLJoutpKR+zBEo5S9thjye+LFkiqIHpLK9FbAIp/BeHKk0mnQAg+7sCzdnWdFvSauAHOfmrFXPL71vXTABMYSsr7lu2akowMzD4ZyVF9y6iKLWprWNVmglvpqGqyxuDT0wh6A1OLokod5AEY8I898UtkAmpeTVv/b24+7vCk3rZsonmcnVH8f6/KtrSGaiYW0sfraddJDMqFfaOyHehLEhCxLvKjgTo8wcUJjbVMc97VHys7un5Hc+9pX2mlYxr77cGqHUPTXp04ACZfxp4g7OmE9HbnUoWVy319kLv/8fd0lXnt71h7muMXzMDWpLHBsYnj6y3vw8HTM1F/T8IMoM82d1P84D0DD4xvQXBz4KFLAqj4ymW7YV2DFgg5OwF4ugw6Ff7wzi8IQ7g=
+  on:
+    tags: true
+    all_branches: true
+    condition: "$DEPLOY_TO_FORGE = yes"
